@@ -1,0 +1,705 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Menu - Food With A Purpose</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="icon" type="image/png" href="images/favicon.svg">
+  
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon"><i class="fas fa-utensils"></i></div>
+                <span>FoodPurpose</span>
+            </div>
+            <nav>
+                <ul>
+                 <a href="home.html" class="switch-link">Home</a>
+                  <li><a href="menu.html">Menu</a></li>
+ <li style="position: relative;">
+    <a href="cart.html">Add to cart</a>
+    <span class="cart-badge" style="display: none;">0</span>
+</li>                    <li><a href="index.html#about">About</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="header-btn">Login</a>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-overlay"></div>
+    <div class="mobile-nav">
+        <div class="mobile-close">
+            <i class="fas fa-times"></i>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="recipes.html">Recipes</a></li>
+<li style="position: relative;">
+    <a href="cart.html">Add to cart</a>
+    <span class="cart-badge" style="display: none;">0</span>
+</li>            <li><a href="index.html#about">About</a></li>
+            <li><a href="#" style="color: #f9c446;">Login</a></li>
+        </ul>
+    </div>
+
+    <section class="menu-hero">
+        <h1>Our <span>Full Menu</span></h1>
+        <p>Explore our complete selection of organic, healthy meals crafted with love and the finest ingredients</p>
+    </section>
+
+    <div class="menu-filter">
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All Items</button>
+            <button class="filter-btn" data-filter="bowls">Bowls</button>
+            <button class="filter-btn" data-filter="smoothies">Smoothies</button>
+            <button class="filter-btn" data-filter="paninis">Paninis</button>
+            <button class="filter-btn" data-filter="salads">Salads</button>
+            <button class="filter-btn" data-filter="mains">Main Courses</button>
+            <button class="filter-btn" data-filter="desserts">Desserts</button>
+        </div>
+    </div>
+
+    
+
+    <div class="menu-container">
+        <!-- Acai & Power Bowls -->
+        <div class="menu-category" data-category="bowls">
+            <div class="category-header">
+                <div class="category-icon"><i class="fas fa-bowl-food"></i></div>
+                <h2>Acai & Power Bowls</h2>
+            </div>
+            <div class="items-grid">
+                <div class="menu-item-card">
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1590301157890-4810ed352733?w=400&h=300&fit=crop" alt="Classic Acai Bowl">
+                        <span class="item-badge"><i class="fas fa-star"></i> Bestseller</span>
+                        <span class="item-price">$12</span>
+                    </div>
+                    <div class="item-details">
+                        <h3>Classic Acai Bowl</h3>
+                        <div class="item-meta">
+                            <span><i class="fas fa-leaf"></i> Vegan</span>
+                            <span><i class="fas fa-fire"></i> 320 cal</span>
+                        </div>
+                        <p class="item-description">Organic acai blended with banana, topped with granola, fresh berries, coconut flakes, and honey.</p>
+                        <div class="item-ingredients">
+                            <span class="ingredient-tag">Acai</span>
+                            <span class="ingredient-tag">Granola</span>
+                            <span class="ingredient-tag">Berries</span>
+                            <span class="ingredient-tag">Banana</span>
+                        </div>
+                        <div class="item-actions">
+                            <button class="add-to-cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="customize-btn"><i class="fas fa-sliders-h"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item-card">
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1546793665-c74683f339c1?w=400&h=300&fit=crop" alt="Protein Power Bowl">
+                        <span class="item-badge"><i class="fas fa-dumbbell"></i> High Protein</span>
+                        <span class="item-price">$14</span>
+                    </div>
+                    <div class="item-details">
+                        <h3>Protein Power Bowl</h3>
+                        <div class="item-meta">
+                            <span><i class="fas fa-dumbbell"></i> 25g Protein</span>
+                            <span><i class="fas fa-fire"></i> 380 cal</span>
+                        </div>
+                        <p class="item-description">Acai base with protein powder, almond butter, chia seeds, hemp hearts, and fresh fruits.</p>
+                        <div class="item-ingredients">
+                            <span class="ingredient-tag">Protein Powder</span>
+                            <span class="ingredient-tag">Almond Butter</span>
+                            <span class="ingredient-tag">Chia Seeds</span>
+                        </div>
+                        <div class="item-actions">
+                            <button class="add-to-cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="customize-btn"><i class="fas fa-sliders-h"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item-card">
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?w=400&h=300&fit=crop" alt="Dragon Fruit Bowl">
+                        <span class="item-badge"><i class="fas fa-heart"></i> Instagram Fav</span>
+                        <span class="item-price">$13</span>
+                    </div>
+                    <div class="item-details">
+                        <h3>Pink Dragon Fruit Bowl</h3>
+                        <div class="item-meta">
+                            <span><i class="fas fa-leaf"></i> Vegan</span>
+                            <span><i class="fas fa-fire"></i> 290 cal</span>
+                        </div>
+                        <p class="item-description">Vibrant pink dragon fruit blend with mango, topped with kiwi, coconut, and edible flowers.</p>
+                        <div class="item-ingredients">
+                            <span class="ingredient-tag">Dragon Fruit</span>
+                            <span class="ingredient-tag">Mango</span>
+                            <span class="ingredient-tag">Kiwi</span>
+                        </div>
+                        <div class="item-actions">
+                            <button class="add-to-cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="customize-btn"><i class="fas fa-sliders-h"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <div class="menu-category" data-category="smoothies">
+            <div class="category-header">
+                <div class="category-icon"><i class="fas fa-blender"></i></div>
+                <h2>Signature Smoothies</h2>
+            </div>
+            <div class="items-grid">
+                <div class="menu-item-card">
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1505252585461-04db1eb84625?w=400&h=300&fit=crop" alt="Green Detox">
+                        <span class="item-badge"><i class="fas fa-leaf"></i> Detox</span>
+                        <span class="item-price">$9</span>
+                    </div>
+                    <div class="item-details">
+                        <h3>Green Detox Smoothie</h3>
+                        <div class="item-meta">
+                            <span><i class="fas fa-leaf"></i> Organic</span>
+                            <span><i class="fas fa-fire"></i> 180 cal</span>
+                        </div>
+                        <p class="item-description">Spinach, kale, cucumber, celery, green apple, lemon, and ginger. Perfect for cleansing.</p>
+                        <div class="item-ingredients">
+                            <span class="ingredient-tag">Spinach</span>
+                            <span class="ingredient-tag">Kale</span>
+                            <span class="ingredient-tag">Ginger</span>
+                        </div>
+                        <div class="item-actions">
+                            <button class="add-to-cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="customize-btn"><i class="fas fa-sliders-h"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item-card">
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1638176066666-ffb2f013c7dd?w=400&h=300&fit=crop" alt="Berry Blast">
+                        <span class="item-badge"><i class="fas fa-bolt"></i> Energy</span>
+                        <span class="item-price">$10</span>
+                    </div>
+                    <div class="item-details">
+                        <h3>Berry Blast Smoothie</h3>
+                        <div class="item-meta">
+                            <span><i class="fas fa-heart"></i> Antioxidant</span>
+                            <span><i class="fas fa-fire"></i> 220 cal</span>
+                        </div>
+                        <p class="item-description">Mixed berries, banana, Greek yogurt, honey, and almond milk. Loaded with antioxidants.</p>
+                        <div class="item-ingredients">
+                            <span class="ingredient-tag">Blueberries</span>
+                            <span class="ingredient-tag">Strawberries</span>
+                            <span class="ingredient-tag">Yogurt</span>
+                        </div>
+                        <div class="item-actions">
+                            <button class="add-to-cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="customize-btn"><i class="fas fa-sliders-h"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item-card">
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1622597467836-f3285f2131b8?w=400&h=300&fit=crop" alt="Tropical Paradise">
+                        <span class="item-badge"><i class="fas fa-sun"></i> Tropical</span>
+                        <span class="item-price">$10</span>
+                    </div>
+                    <div class="item-details">
+                        <h3>Tropical Paradise</h3>
+                        <div class="item-meta">
+                            <span><i class="fas fa-leaf"></i> Vegan</span>
+                            <span><i class="fas fa-fire"></i> 240 cal</span>
+                        </div>
+                        <p class="item-description">Mango, pineapple, passion fruit, coconut milk, and turmeric. A taste of the tropics!</p>
+                        <div class="item-ingredients">
+                            <span class="ingredient-tag">Mango</span>
+                            <span class="ingredient-tag">Pineapple</span>
+                            <span class="ingredient-tag">Coconut</span>
+                        </div>
+                        <div class="item-actions">
+                            <button class="add-to-cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="customize-btn"><i class="fas fa-sliders-h"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Paninis & Sandwiches -->
+        <div class="menu-category" data-category="paninis">
+            <div class="category-header">
+                <div class="category-icon"><i class="fas fa-bread-slice"></i></div>
+                <h2>Gourmet Paninis</h2>
+            </div>
+            <div class="items-grid">
+                <div class="menu-item-card">
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?w=400&h=300&fit=crop" alt="Caprese Panini">
+                        <span class="item-badge"><i class="fas fa-cheese"></i> Vegetarian</span>
+                        <span class="item-price">$11</span>
+                    </div>
+                    <div class="item-details">
+                        <h3>Caprese Panini</h3>
+                        <div class="item-meta">
+                            <span><i class="fas fa-cheese"></i> Vegetarian</span>
+                            <span><i class="fas fa-fire"></i> 420 cal</span>
+                        </div>
+                        <p class="item-description">Fresh mozzarella, tomatoes, basil pesto, balsamic glaze on ciabatta bread.</p>
+                        <div class="item-ingredients">
+                            <span class="ingredient-tag">Mozzarella</span>
+                            <span class="ingredient-tag">Basil Pesto</span>
+                            <span class="ingredient-tag">Tomato</span>
+                        </div>
+                        <div class="item-actions">
+                            <button class="add-to-cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="customize-btn"><i class="fas fa-sliders-h"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item-card">
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=400&h=300&fit=crop" alt="Grilled Chicken">
+                        <span class="item-badge"><i class="fas fa-drumstick-bite"></i> Protein</span>
+                        <span class="item-price">$13</span>
+                    </div>
+                    <div class="item-details">
+                        <h3>Grilled Chicken Panini</h3>
+                        <div class="item-meta">
+                            <span><i class="fas fa-drumstick-bite"></i> High Protein</span>
+                            <span><i class="fas fa-fire"></i> 480 cal</span>
+                        </div>
+                        <p class="item-description">Organic grilled chicken, avocado, roasted red peppers, arugula, and chipotle mayo.</p>
+                        <div class="item-ingredients">
+                            <span class="ingredient-tag">Chicken</span>
+                            <span class="ingredient-tag">Avocado</span>
+                            <span class="ingredient-tag">Peppers</span>
+                        </div>
+                        <div class="item-actions">
+                            <button class="add-to-cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="customize-btn"><i class="fas fa-sliders-h"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item-card">
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1553909489-cd47e0907980?w=400&h=300&fit=crop" alt="Veggie Supreme">
+                        <span class="item-badge"><i class="fas fa-seedling"></i> Vegan</span>
+                        <span class="item-price">$12</span>
+                    </div>
+                    <div class="item-details">
+                        <h3>Veggie Supreme Panini</h3>
+                        <div class="item-meta">
+                            <span><i class="fas fa-leaf"></i> Vegan</span>
+                            <span><i class="fas fa-fire"></i> 390 cal</span>
+                        </div>
+                        <p class="item-description">Grilled zucchini, eggplant, bell peppers, hummus, and sun-dried tomatoes on multigrain.</p>
+                        <div class="item-ingredients">
+                            <span class="ingredient-tag">Zucchini</span>
+                            <span class="ingredient-tag">Eggplant</span>
+                            <span class="ingredient-tag">Hummus</span>
+                        </div>
+                        <div class="item-actions">
+                            <button class="add-to-cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="customize-btn"><i class="fas fa-sliders-h"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fresh Salads -->
+        <div class="menu-category" data-category="salads">
+            <div class="category-header">
+                <div class="category-icon"><i class="fas fa-salad"></i></div>
+                <h2>Fresh Salads</h2>
+            </div>
+            <div class="items-grid">
+                <div class="menu-item-card">
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=300&fit=crop" alt="Mediterranean Salad">
+                        <span class="item-badge"><i class="fas fa-star"></i> Chef's Choice</span>
+                        <span class="item-price">$14</span>
+                    </div>
+                    <div class="item-details">
+                        <h3>Mediterranean Quinoa Salad</h3>
+                        <div class="item-meta">
+                            <span><i class="fas fa-leaf"></i> Vegetarian</span>
+                            <span><i class="fas fa-fire"></i> 380 cal</span>
+                        </div>
+                        <p class="item-description">Quinoa, chickpeas, cucumber, tomatoes, red onion, feta, olives with lemon-herb dressing.</p>
+                        <div class="item-ingredients">
+                            <span class="ingredient-tag">Quinoa</span>
+                            <span class="ingredient-tag">Feta</span>
+                            <span class="ingredient-tag">Chickpeas</span>
+                        </div>
+                        <div class="item-actions">
+                            <button class="add-to-cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="customize-btn"><i class="fas fa-sliders-h"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item-card">
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1546793665-c74683f339c1?w=400&h=300&fit=crop" alt="Kale Caesar">
+                        <span class="item-badge"><i class="fas fa-dumbbell"></i> Protein</span>
+                        <span class="item-price">$13</span>
+                    </div>
+                    <div class="item-details">
+                        <h3>Kale Caesar with Grilled Chicken</h3>
+                        <div class="item-meta">
+                            <span><i class="fas fa-drumstick-bite"></i> High Protein</span>
+                            <span class="fas fa-fire"></i> 420 cal</span>
+                        </div>
+                        <p class="item-description">Fresh kale, grilled chicken, parmesan, whole grain croutons, and creamy Caesar dressing.</p>
+                        <div class="item-ingredients">
+                            <span class="ingredient-tag">Kale</span>
+                            <span class="ingredient-tag">Chicken</span>
+                            <span class="ingredient-tag">Parmesan</span>
+                        </div>
+                        <div class="item-actions">
+                            <button class="add-to-cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="customize-btn"><i class="fas fa-sliders-h"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item-card">
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=400&h=300&fit=crop" alt="Asian Sesame">
+                        <span class="item-badge"><i class="fas fa-pepper-hot"></i> Spicy</span>
+                        <span class="item-price">$12</span>
+                    </div>
+                    <div class="item-details">
+                        <h3>Asian Sesame Salad</h3>
+                        <div class="item-meta">
+                            <span><i class="fas fa-leaf"></i> Vegan Option</span>
+                            <span><i class="fas fa-fire"></i> 340 cal</span>
+                        </div>
+                        <p class="item-description">Mixed greens, edamame, carrots, red cabbage, mandarin oranges with ginger-sesame dressing.</p>
+                        <div class="item-ingredients">
+                            <span class="ingredient-tag">Edamame</span>
+                            <span class="ingredient-tag">Sesame</span>
+                            <span class="ingredient-tag">Ginger</span>
+                        </div>
+                        <div class="item-actions">
+                            <button class="add-to-cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="customize-btn"><i class="fas fa-sliders-h"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Courses -->
+        <div class="menu-category" data-category="mains">
+            <div class="category-header">
+                <div class="category-icon"><i class="fas fa-plate-wheat"></i></div>
+                <h2>Main Courses</h2>
+            </div>
+            <div class="items-grid">
+                <div class="menu-item-card">
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=300&fit=crop" alt="Brown Rice Bowl">
+                        <span class="item-badge"><i class="fas fa-seedling"></i> Organic</span>
+                        <span class="item-price">$15</span>
+                    </div>
+                    <div class="item-details">
+                        <h3>Brown Rice & Quinoa Bowl</h3>
+                        <div class="item-meta">
+                            <span><i class="fas fa-leaf"></i> Vegan</span>
+                            <span><i class="fas fa-fire"></i> 520 cal</span>
+                        </div>
+                        <p class="item-description">Organic brown rice and quinoa base with roasted vegetables, avocado, and tahini sauce.</p>
+                        <div class="item-ingredients">
+                            <span class="ingredient-tag">Brown Rice</span>
+                            <span class="ingredient-tag">Quinoa</span>
+                            <span class="ingredient-tag">Avocado</span>
+                        </div>
+                        <div class="item-actions">
+                            <button class="add-to-cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="customize-btn"><i class="fas fa-sliders-h"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item-card">
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=400&h=300&fit=crop" alt="Moroccan Chicken">
+                        <span class="item-badge"><i class="fas fa-star"></i> Popular</span>
+                        <span class="item-price">$17</span>
+                    </div>
+                    <div class="item-details">
+                        <h3>Moroccan Chicken with Lentils</h3>
+                        <div class="item-meta">
+                            <span><i class="fas fa-drumstick-bite"></i> Protein</span>
+                            <span><i class="fas fa-fire"></i> 580 cal</span>
+                        </div>
+                        <p class="item-description">Spiced Moroccan chicken with organic lentils, roasted vegetables, and yogurt sauce.</p>
+                        <div class="item-ingredients">
+                            <span class="ingredient-tag">Chicken</span>
+                            <span class="ingredient-tag">Lentils</span>
+                            <span class="ingredient-tag">Spices</span>
+                        </div>
+                        <div class="item-actions">
+                            <button class="add-to-cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="customize-btn"><i class="fas fa-sliders-h"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item-card">
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1529042410759-befb1204b468?w=400&h=300&fit=crop" alt="Grass-Fed Beef">
+                        <span class="item-badge"><i class="fas fa-certificate"></i> Premium</span>
+                        <span class="item-price">$19</span>
+                    </div>
+                    <div class="item-details">
+                        <h3>Grass-Fed Beef & Roasted Eggplant</h3>
+                        <div class="item-meta">
+                            <span><i class="fas fa-award"></i> Premium</span>
+                            <span><i class="fas fa-fire"></i> 620 cal</span>
+                        </div>
+                        <p class="item-description">Premium grass-fed beef with slow-roasted eggplant, herbs, and garlic sauce.</p>
+                        <div class="item-ingredients">
+                            <span class="ingredient-tag">Grass-Fed Beef</span>
+                            <span class="ingredient-tag">Eggplant</span>
+                            <span class="ingredient-tag">Herbs</span>
+                        </div>
+                        <div class="item-actions">
+                            <button class="add-to-cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="customize-btn"><i class="fas fa-sliders-h"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item-card">
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1559847844-5315695dadae?w=400&h=300&fit=crop" alt="Grilled Salmon">
+                        <span class="item-badge"><i class="fas fa-fish"></i> Omega-3</span>
+                        <span class="item-price">$18</span>
+                    </div>
+                    <div class="item-details">
+                        <h3>Grilled Salmon Delight</h3>
+                        <div class="item-meta">
+                            <span><i class="fas fa-fish"></i> Rich in Omega-3</span>
+                            <span><i class="fas fa-fire"></i> 540 cal</span>
+                        </div>
+                        <p class="item-description">Fresh grilled salmon with asparagus, sweet potato, and lemon butter sauce.</p>
+                        <div class="item-ingredients">
+                            <span class="ingredient-tag">Salmon</span>
+                            <span class="ingredient-tag">Asparagus</span>
+                            <span class="ingredient-tag">Sweet Potato</span>
+                        </div>
+                        <div class="item-actions">
+                            <button class="add-to-cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="customize-btn"><i class="fas fa-sliders-h"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item-card">
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop" alt="Veggie Stir-Fry">
+                        <span class="item-badge"><i class="fas fa-leaf"></i> Vegan</span>
+                        <span class="item-price">$14</span>
+                    </div>
+                    <div class="item-details">
+                        <h3>Rainbow Veggie Stir-Fry</h3>
+                        <div class="item-meta">
+                            <span><i class="fas fa-seedling"></i> Plant-Based</span>
+                            <span><i class="fas fa-fire"></i> 420 cal</span>
+                        </div>
+                        <p class="item-description">Colorful vegetables stir-fried with ginger, garlic, sesame oil over brown rice.</p>
+                        <div class="item-ingredients">
+                            <span class="ingredient-tag">Mixed Veggies</span>
+                            <span class="ingredient-tag">Ginger</span>
+                            <span class="ingredient-tag">Sesame</span>
+                        </div>
+                        <div class="item-actions">
+                            <button class="add-to-cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="customize-btn"><i class="fas fa-sliders-h"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item-card">
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1585238341710-4a1b1d2b1b1a?w=400&h=300&fit=crop" alt="Teriyaki Bowl">
+                        <span class="item-badge"><i class="fas fa-drumstick-bite"></i> Protein</span>
+                        <span class="item-price">$16</span>
+                    </div>
+                    <div class="item-details">
+                        <h3>Teriyaki Chicken Bowl</h3>
+                        <div class="item-meta">
+                            <span><i class="fas fa-drumstick-bite"></i> High Protein</span>
+                            <span><i class="fas fa-fire"></i> 560 cal</span>
+                        </div>
+                        <p class="item-description">Grilled chicken with house-made teriyaki sauce, steamed broccoli, and jasmine rice.</p>
+                        <div class="item-ingredients">
+                            <span class="ingredient-tag">Chicken</span>
+                            <span class="ingredient-tag">Teriyaki</span>
+                            <span class="ingredient-tag">Broccoli</span>
+                        </div>
+                        <div class="item-actions">
+                            <button class="add-to-cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="customize-btn"><i class="fas fa-sliders-h"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Healthy Desserts -->
+        <div class="menu-category" data-category="desserts">
+            <div class="category-header">
+                <div class="category-icon"><i class="fas fa-ice-cream"></i></div>
+                <h2>Healthy Desserts</h2>
+            </div>
+            <div class="items-grid">
+                <div class="menu-item-card">
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400&h=300&fit=crop" alt="Chia Pudding">
+                        <span class="item-badge"><i class="fas fa-heart"></i> Guilt-Free</span>
+                        <span class="item-price">$7</span>
+                    </div>
+                    <div class="item-details">
+                        <h3>Chia Seed Pudding</h3>
+                        <div class="item-meta">
+                            <span><i class="fas fa-leaf"></i> Vegan</span>
+                            <span><i class="fas fa-fire"></i> 220 cal</span>
+                        </div>
+                        <p class="item-description">Organic chia seeds in coconut milk with fresh berries and maple syrup.</p>
+                        <div class="item-ingredients">
+                            <span class="ingredient-tag">Chia Seeds</span>
+                            <span class="ingredient-tag">Coconut Milk</span>
+                            <span class="ingredient-tag">Berries</span>
+                        </div>
+                        <div class="item-actions">
+                            <button class="add-to-cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="customize-btn"><i class="fas fa-sliders-h"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item-card">
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=400&h=300&fit=crop" alt="Energy Balls">
+                        <span class="item-badge"><i class="fas fa-bolt"></i> Energy</span>
+                        <span class="item-price">$6</span>
+                    </div>
+                    <div class="item-details">
+                        <h3>Power Energy Balls (6 pcs)</h3>
+                        <div class="item-meta">
+                            <span><i class="fas fa-seedling"></i> Raw</span>
+                            <span><i class="fas fa-fire"></i> 180 cal</span>
+                        </div>
+                        <p class="item-description">Dates, nuts, cocoa, and coconut rolled into bite-sized energy boosters.</p>
+                        <div class="item-ingredients">
+                            <span class="ingredient-tag">Dates</span>
+                            <span class="ingredient-tag">Almonds</span>
+                            <span class="ingredient-tag">Cocoa</span>
+                        </div>
+                        <div class="item-actions">
+                            <button class="add-to-cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="customize-btn"><i class="fas fa-sliders-h"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item-card">
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=400&h=300&fit=crop" alt="Nice Cream">
+                        <span class="item-badge"><i class="fas fa-ice-cream"></i> Frozen</span>
+                        <span class="item-price">$8</span>
+                    </div>
+                    <div class="item-details">
+                        <h3>Banana Nice Cream</h3>
+                        <div class="item-meta">
+                            <span><i class="fas fa-leaf"></i> Vegan</span>
+                            <span><i class="fas fa-fire"></i> 160 cal</span>
+                        </div>
+                        <p class="item-description">Frozen banana blended smooth, topped with dark chocolate chips and nuts.</p>
+                        <div class="item-ingredients">
+                            <span class="ingredient-tag">Banana</span>
+                            <span class="ingredient-tag">Dark Chocolate</span>
+                            <span class="ingredient-tag">Nuts</span>
+                        </div>
+                        <div class="item-actions">
+                            <button class="add-to-cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="customize-btn"><i class="fas fa-sliders-h"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="newsletter">
+        <h2>Get Exclusive Menu Updates!</h2>
+        <p>Subscribe to be the first to know about new menu items and special offers.</p>
+        <form class="newsletter-form">
+            <input type="text" placeholder="Your name" required>
+            <input type="email" placeholder="Your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Street Name, City, Country</li>
+                    <li><i class="fas fa-phone"></i> +92 123456789</li>
+                    <li><i class="fas fa-envelope"></i> info@foodpurpose.com</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Opening Hours</h3>
+                <ul>
+                    <li>Monday - Friday: 9AM - 10PM</li>
+                    <li>Saturday: 10AM - 11PM</li>
+                    <li>Sunday: 10AM - 9PM</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Food With A Purpose. All Rights Reserved. Developed with <i class="fas fa-heart"></i> for healthy living.</p>
+        </div>
+    </footer>
+ 
+<script src="home.js"></script>
+<script src="cart.js"></script>
+<script src="menu.js"></script>
+<script src="cart-manager.js"></script>
+
+</script>
+</body>
+</html>
