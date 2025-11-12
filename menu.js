@@ -76,6 +76,8 @@ console.log('🔵 menu.js loading...');
                 return;
             }
             
+
+            
              try {
                 const h3 = itemDetails.querySelector('h3');
                 const priceElement = card.querySelector('.item-price');
@@ -149,6 +151,8 @@ console.log('🔵 menu.js loading...');
             }
         });
     });
+
+ 
     
     console.log('✅ Menu functionality initialized');
 });
