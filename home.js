@@ -21,8 +21,6 @@ mobileOverlay.addEventListener('click', closeMobileMenu);
 document.querySelectorAll('.mobile-nav a').forEach(link => {
     link.addEventListener('click', closeMobileMenu);
 });
- 
-
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -37,10 +35,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-
 document.querySelector('.newsletter-form').addEventListener('submit', (e) => {
     e.preventDefault();
-    alert('Thank you for subscribing! You will receive exclusive offers and updates.');
+    if (window.showToast) {
+        window.showToast('✅ Thank you for subscribing!', 'success');
+    } else {
+        alert('Thank you for subscribing! You will receive exclusive offers and updates.');
+    }
     e.target.reset();
 });
 
@@ -48,7 +49,6 @@ const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
 };
-
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -65,32 +65,35 @@ document.querySelectorAll('.step, .menu-item, .offer-card, .meal-card, .about-ca
     el.style.transition = 'all 0.6s ease-out';
     observer.observe(el);
 });
- 
 
 document.querySelectorAll('.recipe-btn').forEach(btn => {
     btn.addEventListener('click', function() {
         const recipeName = this.closest('.recipe-card').querySelector('h3').textContent;
-        alert(`Opening recipe for: ${recipeName}\n\nFull recipe details coming soon!`);
+        if (window.showToast) {
+            window.showToast(`📖 Recipe Coming soon: ${recipeName}`, 'success');
+        } else {
+            alert(`Opening recipe for: ${recipeName}\n\nFull recipe details coming soon!`);
+        }
     });
 });
 
 document.querySelectorAll('.order-card-btn, .order-cta-btn').forEach(btn => {
     btn.addEventListener('click', function() {
-        alert('🛒 Redirecting to order page...\n\nYour delicious, healthy meal is just a few clicks away!');
+        if (window.showToast) {
+            window.showToast('🛒 Redirecting to order page...', 'success');
+        } else {
+            alert('🛒 Redirecting to order page...\n\nYour delicious, healthy meal is just a few clicks away!');
+        }
     });
 });
-/*
- document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-  });
 
-    document.addEventListener('keydown', function(e) {
-    // Disable F12, Ctrl+Shift+I, Ctrl+U, Ctrl+C
-    if (
-      e.key === 'F12' ||
-      (e.ctrlKey && (e.key === 'u' || e.key === 'U' || e.key === 'c' || e.key === 'C' || e.key === 's' || e.key === 'S' || e.key === 'i' || e.key === 'I'))
-    ) {
-      e.preventDefault();
-    }
-  });*/
-   
+// Also update "Order Now" buttons in special offers
+document.querySelectorAll('.order-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        if (window.showToast) {
+            window.showToast('🛒 Adding to cart...', 'success');
+        } else {
+            alert('Order functionality coming soon!');
+        }
+    });
+});
