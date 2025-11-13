@@ -6,7 +6,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f9c446;
+            /* background: #f9c446; */
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -277,4 +277,5 @@
             color: #667eea;
             margin-right: 8px;
         }
+
   
