@@ -1,6 +1,6 @@
 // Cart Page - Displays cart items
 console.log('🔵 cart-page.js loading...');
-
+                                                                                                                                                                        
 // Wait for cart manager to be ready
 function waitForCartManager(callback) {
     if (window.cartManager) {
@@ -100,19 +100,32 @@ waitForCartManager(function() {
     
     function updateSummary() {
         const subtotal = window.cartManager.getSubtotal();
-        const deliveryFee = subtotal > 0 ? 5 : 0;
-        const tax = subtotal * 0.1;
-        const total = subtotal + deliveryFee + tax;
-        
-        const subtotalElement = document.getElementById('subtotal');
-        const deliveryFeeElement = document.getElementById('delivery-fee');
-        const taxElement = document.getElementById('tax');
-        const totalElement = document.getElementById('total');
-        
-        if (subtotalElement) subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
-        if (deliveryFeeElement) deliveryFeeElement.textContent = `$${deliveryFee.toFixed(2)}`;
-        if (taxElement) taxElement.textContent = `$${tax.toFixed(2)}`;
-        if (totalElement) totalElement.textContent = `$${total.toFixed(2)}`;
+        const deliveryFee = window.cartManager.getDeliveryFee(subtotal);
+        const discount = window.cartManager.getDiscount(subtotal);
+        const tax = (subtotal - discount) * 0.1;
+        const total = subtotal - discount + deliveryFee + tax;
+
+        const subtotalEl   = document.getElementById('subtotal');
+        const deliveryEl   = document.getElementById('delivery-fee');
+        const taxEl        = document.getElementById('tax');
+        const totalEl      = document.getElementById('total');
+        const discountRow  = document.getElementById('discount-row');
+        const discountEl   = document.getElementById('discount');
+        const discountCode = document.querySelector('.discount-code');
+
+        if (subtotalEl)  subtotalEl.textContent  = `$${subtotal.toFixed(2)}`;
+        if (deliveryEl)  deliveryEl.textContent  = `$${deliveryFee.toFixed(2)}`;
+        if (taxEl)       taxEl.textContent       = `$${tax.toFixed(2)}`;
+        if (totalEl)     totalEl.textContent     = `$${total.toFixed(2)}`;
+
+        const promo = window.cartManager.getPromo();
+        if (promo && (discount > 0 || promo.type === 'shipping')) {
+            if (discountRow)  discountRow.style.display = 'flex';
+            if (discountEl)   discountEl.textContent = promo.type === 'shipping' ? '-$5.00' : `-$${discount.toFixed(2)}`;
+            if (discountCode) discountCode.textContent = promo.code;
+        } else {
+            if (discountRow) discountRow.style.display = 'none';
+        }
     }
     
     function updateItemCount() {
@@ -181,7 +194,7 @@ waitForCartManager(function() {
             }
         });
     }
-    
+ 
     // Checkout button
     const checkoutBtn = document.getElementById('checkout-btn');
     if (checkoutBtn) {
@@ -207,20 +220,84 @@ waitForCartManager(function() {
 
 
     
-    // Promo code button
+    // Promo code
     const applyPromoBtn = document.getElementById('apply-promo');
-    if (applyPromoBtn) {
-        applyPromoBtn.addEventListener('click', function() {
-            const promoInput = document.getElementById('promo-input');
-            if (promoInput && promoInput.value.trim()) {
-                if (window.showToast) {
-                    window.showToast('Promo code feature coming soon!', 'success');
-                } else {
-                    alert('Promo code feature coming soon!');
-                }
-            }
+    const promoInput    = document.getElementById('promo-input');
+    const promoFeedback = document.getElementById('promo-feedback');
+
+    function setPromoFeedback(message, type) {
+        if (!promoFeedback) return;
+        promoFeedback.textContent = message;
+        promoFeedback.className = `promo-feedback promo-feedback-${type} show`;
+    }
+
+    function refreshPromoUI() {
+        const promo = window.cartManager.getPromo();
+        const removeBtn = document.getElementById('remove-promo');
+
+        if (promo) {
+            if (promoInput)  { promoInput.value = promo.code; promoInput.disabled = true; }
+            if (applyPromoBtn) applyPromoBtn.style.display = 'none';
+            if (removeBtn)   removeBtn.style.display = 'inline-flex';
+            setPromoFeedback(`✓ ${promo.label}`, 'success');
+        } else {
+            if (promoInput)  { promoInput.value = ''; promoInput.disabled = false; }
+            if (applyPromoBtn) applyPromoBtn.style.display = '';
+            if (removeBtn)   removeBtn.style.display = 'none';
+            if (promoFeedback) promoFeedback.className = 'promo-feedback';
+        }
+    }
+
+    // Inject remove button & feedback element into DOM
+    const promoSection = document.querySelector('.promo-code');
+    if (promoSection) {
+        // Feedback line
+        const fb = document.createElement('div');
+        fb.id = 'promo-feedback';
+        fb.className = 'promo-feedback';
+        promoSection.insertAdjacentElement('afterend', fb);
+
+        // Remove button
+        const removeBtn = document.createElement('button');
+        removeBtn.id = 'remove-promo';
+        removeBtn.innerHTML = '<i class="fas fa-times"></i>';
+        removeBtn.title = 'Remove promo code';
+        removeBtn.style.display = 'none';
+        removeBtn.className = 'remove-promo-btn';
+        promoSection.appendChild(removeBtn);
+
+        removeBtn.addEventListener('click', function () {
+            window.cartManager.removePromo();
+            refreshPromoUI();
+            updateSummary();
+            if (window.showToast) window.showToast('Promo code removed', 'success');
         });
     }
+
+    if (applyPromoBtn) {
+        applyPromoBtn.addEventListener('click', function () {
+            const code = promoInput ? promoInput.value : '';
+            const result = window.cartManager.applyPromo(code);
+            if (result.success) {
+                refreshPromoUI();
+                updateSummary();
+                if (window.showToast) window.showToast(result.message, 'success');
+            } else {
+                setPromoFeedback(result.message, 'error');
+                if (window.showToast) window.showToast(result.message, 'error');
+            }
+        });
+
+        if (promoInput) {
+            promoInput.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter') applyPromoBtn.click();
+            });
+        }
+    }
+
+    refreshPromoUI();
+
+    
     
     // Initial render
     renderCart();
